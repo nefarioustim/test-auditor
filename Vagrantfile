@@ -3,7 +3,7 @@
 
 Vagrant::Config.run do |config|
     config.vm.box = "ubuntu-11.10"
-    config.vm.customize["modifyvm", :id, "--memory", "2048"]
+    config.vm.customize ["modifyvm", :id, "--memory", "2048"]
     config.vm.network :hostonly, "33.33.33.40"
     config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
 
