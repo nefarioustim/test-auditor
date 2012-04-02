@@ -9,7 +9,7 @@ class python {
             "libxslt-dev",
         ]:
         ensure => latest,
-        before => Package["flask", "psycopg2", "sqlalchemy", "gunicorn", "lxml"],
+        before => Package["flask"],
     }
     file { "/etc/supervisord.conf":
         owner  => root,
@@ -43,8 +43,6 @@ class python {
     }
     package { [
             "flask",
-            "psycopg2",
-            "sqlalchemy",
             "gunicorn",
             "fabric",
             "requests",
@@ -59,9 +57,7 @@ class python {
         notify => Service["supervisord"],
     }
     package { [
-            "flask-sqlalchemy",
             "flask-wtf",
-            "flask-login"
         ]:
         ensure => latest,
         provider => "pip",
