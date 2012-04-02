@@ -50,6 +50,7 @@ class python {
             "coverage",
             "python-memcached",
             "lxml",
+            "pyrally"
         ]:
         ensure => latest,
         provider => "pip",
